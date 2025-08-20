@@ -1,0 +1,128 @@
+Metadata-Version: 2.1
+Name: une-ai
+Version: 1.1.5
+Summary: Modules used to facilitate the tutorial sessions for UNE unit COSC350/550
+Author-email: Jonathan Vitale <jvitale@une.edu.au>
+License: MIT License
+        
+        Copyright (c) 2023, University of New England (UNE)
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Keywords: UNE,AI,teaching
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pyDatalog
+
+# une_ai: a library of models and exercises for COSC350/550 unit (Artificial Intelligence)
+
+## What is it?
+
+**une_ai** is a Python package that provides models and classes that can be used to practice Artificial Intelligence algorithms. The package is structured so to offer the tools required during the weekly practical workshops and it also includes classes that can be used as base for the implementation of the practical assignments.
+
+## How to install it
+
+UNE students have access to the Turing server machine via ssh command or X2go. This machine runs a Linux based environment and already provides Python3 and pip. It also supports Python virtual environments with venv and conda.
+
+To minimise technical issues and assistance, it is recommended to use the Turing server to implement your code for the workshops and assignments. However, if you feel confident to install Python3 on your machine, you can use the same instructions provided below. Note: these instructions are for Linux or MacOS machines (Windows machines may require different instructions and it is recommended to use Turing instead).
+
+Although not required, it is best to create a Python virtual environment that you will use for your implementations during the unit. You have at least two options: using conda or using venv. In this README file we only provide instructions to install the package using conda (recommended option).
+
+### conda environment and package installation with pip
+
+For this option you need to have conda installed on the machine you are using to install this package. If you are using Turing, conda is already installed and supported (no stress :D).
+
+First, we need to create the virtual environment. We will call it *cosc350* and once created it will be there until we decide to delete it. In other words, you need to create it once. Remember to answer y and press Enter when conda asks you to provide a y/n answer.
+
+```sh
+conda create -n cosc350
+```
+
+Now that we created the conda virtual environment, we need to activate it. Remember: you must execute this command everytime you open a new terminal window that you will use to run Python code using this package.
+
+```sh
+conda activate cosc350
+```
+
+If everything is good, you should see *(cosc350)* on the left side in the terminal window. That means that now we are using the virtual environment we just created.
+
+To install this package using pip, we need to first install pip in this virtual environment. To do this, type the following command (and answer y when required).
+
+```sh
+conda install pip
+```
+
+Now that pip was installed on the conda virtual environment, we can install the une_ai package. Once installing, the package will automatically install all the necessary dependencies (again, no stress :D).
+
+```sh
+pip install une_ai
+```
+
+Again, remember to answer y if conda asks you to install necessary dependencies.
+
+Now, to test that everything is good, let's access the Python console and import a class from the une_ai package. To access the Python3 console type:
+
+```sh
+python3
+```
+
+Now that you are in the Python3 console, type the following Python commands:
+
+```python
+from une_ai.models import GridMap
+
+my_map = GridMap(5, 5)
+
+print(my_map.get_map())
+```
+
+If everything is correct, you should not see errors and you should see a 5 by 5 boolean 2D numpy array. Hurray! :D
+
+To exit the Python3 console type the following instruction and press Enter:
+
+```Python
+exit()
+```
+
+If you want to deactivate the conda environment (i.e. you do not need it anymore for now and you want to exit the virtual environment), type the following command on the terminal:
+
+```sh
+conda deactivate
+```
+
+You can achieve the same objective by simply closing the terminal window.
+
+## Dependencies
+- [NumPy - Adds support for large, multi-dimensional arrays, matrices and high-level mathematical functions to operate on these arrays](https://www.numpy.org)
+- [pygame - Provides a cross-platform library for the development of multimedia applications like video games using Python](https://www.pygame.org/news)
+
+## License
+[MIT](LICENSE)
+
+## Documentation
+
+For the documentation on how to use the offered classes, visit the weekly workshops. During each workshop there will be instructions introducing the classes used for the proposed exercises.
+
+## Getting Help
+
+For usage questions, the best place to go to is the forum of the unit on Moodle.
+Further, more assistance can be provided by contacting your unit coordinator (via email).
